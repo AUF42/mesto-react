@@ -1,4 +1,4 @@
-import apiConfig from "./apiconfig";
+import apiConfig from "./apiConfig";
 
 class Api {
     constructor({ url, headers }) {
@@ -28,14 +28,14 @@ class Api {
             .then(res => this._checkResponse(res))
     };
 
-    getUserInfoApi() {
+    getUserInfo() {
         return fetch(`${this._url}/users/me`, {
             headers: this._headers,
         })
             .then(this._checkResponse);
     }
 
-    setUserInfoApi({ name, profession }) {
+    setUserInfo({ name, profession }) {
         return fetch(`${this._url}/users/me`, {
             method: 'PATCH',
             headers: this._headers,

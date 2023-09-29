@@ -12,8 +12,8 @@ function App() {
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
-    const [isImageOpen, setIsImageOpen] = useState(false);
-    const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+    const [isImagePopupOpen, setIsImageOpen] = useState(false);
+    const [isDeleteConfirmPopupOpen, setIsDeleteOpen] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
 
     function handleEditAvatarClick () { setIsEditAvatarPopupOpen(true) }
@@ -38,30 +38,30 @@ function App() {
     }
     return (
             <div className="page">
-                < Header />
-                < Main
+                <Header />
+                <Main
                     onEditAvatar = { handleEditAvatarClick }
                     onEditProfile = { handleEditProfileClick }
                     onAddPlace = { handleAddPlaceClick }
                     onCardClick = { handleCardClick }
                     onCardDelete = { handleCardDelete }
                 />
-                < Footer />
-                < PopupEditAvatar
+                <Footer />
+                <PopupEditAvatar
                     isOpen = { isEditAvatarPopupOpen }
                     onClose = { closeAllPopups } />
-                < PopupEditProfile
+                <PopupEditProfile
                     isOpen = { isEditProfilePopupOpen }
                     onClose = { closeAllPopups } />
-                < PopupAddCard
+                <PopupAddCard
                     isOpen = { isAddPlacePopupOpen }
                     onClose = { closeAllPopups } />
-                < ImagePopup
-                    isOpen = { isImageOpen }
+                <ImagePopup
+                    isOpen = { isImagePopupOpen }
                     onClose = { closeAllPopups }
                     card = { selectedCard } />
-                < PopupWithForm
-                    isOpen = { isDeleteOpen }
+                <PopupWithForm
+                    isOpen = { isDeleteConfirmPopupOpen }
                     onClose = { closeAllPopups }
                     id = 'popup-confirmation'
                     title = 'Вы уверены?'

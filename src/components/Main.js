@@ -8,7 +8,7 @@ function Main (props) {
     const [cards, setCards] = useState([]);
 
     useEffect( () => {
-        Promise.all([ apiConnect.getUserInfoApi(), apiConnect.getInitialCards() ])
+        Promise.all([ apiConnect.getUserInfo(), apiConnect.getInitialCards() ])
             .then(( [ userItem, initialCards] ) => {
                 setUserName(userItem.name);
                 setUserDescription(userItem.about);
